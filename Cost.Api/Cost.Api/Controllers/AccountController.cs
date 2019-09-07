@@ -1,27 +1,32 @@
-﻿using System.Web.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Cost.Api.Models.Request;
 
 namespace Cost.Api.Controllers
 {
     /// <summary>
     /// Контроллер для авторизации/регистрации пользователей
     /// </summary>
-    [Route("[controller]")]
-    public class AccountController : ApiController
+    [AllowAnonymous]
+    [Route("api/account")]
+    public class AccountController : ControllerBase
     {
         /// <summary>
         /// Авторизация в приложении
         /// </summary>
         [HttpPost]
-        public IHttpActionResult Login()
+        [Route("login")]
+        public IActionResult Login([FromBody] LoginRequest request)
         {
-            return Ok();
+            return Ok(request);
         }
 
         /// <summary>
         /// Регистрация в приложении
         /// </summary>
         [HttpPost]
-        public IHttpActionResult Registration()
+        [Route("registration")]
+        public IActionResult Registration()
         {
             return Ok();
         }
