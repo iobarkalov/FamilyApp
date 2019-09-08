@@ -1,4 +1,4 @@
-﻿namespace Cost.Api.Entities
+﻿namespace Cost.Api.Data.Entities
 {
     /// <summary>
     /// Модель пользователя
