@@ -21,8 +21,13 @@
         public string Email { get; set; }
 
         /// <summary>
-        /// Пароль пользователя
+        /// Закодированный пароль пользователя
         /// </summary>
-        public string Password { get; set; }
+        public byte[] PasswordHash { get; set; }
+
+        /// <summary>
+        /// Соль для декодирования пароля пользователя
+        /// </summary>
+        public byte[] PasswordSalt { get; set; }
     }
 }
